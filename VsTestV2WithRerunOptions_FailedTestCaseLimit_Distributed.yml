@@ -15,9 +15,11 @@ jobs:
     inputs:  
       testSelector: 'testAssemblies'     
       testAssemblyVer2: '**/*FlakyTestProject*.dll'
-      rerunFailedTests: true
-      rerunType: basedOnTestFailureCount
       searchFolder: '$(System.DefaultWorkingDirectory)\bin\Debug\'
+      batchingBasedOnAgentsOption: 'customBatchSize'
+      customBatchSizeValue: 10
+      rerunFailedTests: true
+      rerunType: basedOnTestFailureCount     
       basedOnTestFailureCount: 5
       rerunMaxAttempts: 3
       vsTestVersion: 'toolsInstaller'
