@@ -1,0 +1,24 @@
+# The objective is to perform VSTESTV2 with Diagnostics
+
+trigger:
+- master
+jobs:
+- job: RunTest4
+  displayName: 'Run Tests'
+  pool: Default
+  steps:      
+  - task: VisualStudioTestPlatformInstaller@1
+    displayName: 'Visual Studio Test Platform Installer'
+    inputs:
+      versionSelector: 'latestPreRelease'
+  - task: VSTest@2
+    inputs:  
+      testSelector: 'testAssemblies'     
+      testAssemblyVer2: '**/*FlakyTestProject*.dll'
+      rerunFailedTests: true
+      rerunType: basedOnTestFailureCount
+      searchFolder: '$(System.DefaultWorkingDirectory)\bin\Debug\'
+      basedOnTestFailureCount: 5
+      rerunMaxAttempts: 3
+      vsTestVersion: 'toolsInstaller'
+
