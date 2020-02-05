@@ -1,4 +1,4 @@
-# The objective is to perform VSTESTV2 with Diagnostics
+# The objective is to perform VSTESTV2 with RerunOptions_FailedTestCaseLimit_Distributed
 
 trigger:
 - master
