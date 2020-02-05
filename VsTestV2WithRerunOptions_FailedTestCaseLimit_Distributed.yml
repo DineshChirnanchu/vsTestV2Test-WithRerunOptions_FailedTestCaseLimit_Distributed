@@ -23,4 +23,3 @@ jobs:
       basedOnTestFailureCount: 5
       rerunMaxAttempts: 3
       vsTestVersion: 'toolsInstaller'
-
