@@ -14,7 +14,9 @@ jobs:
   - task: VSTest@2
     inputs:  
       testSelector: 'testAssemblies'     
-      testAssemblyVer2: '**/*FlakyTestProject*.dll'
+      testAssemblyVer2: |
+          **\*FlakyTestProject*.dll
+          !**\obj\
       searchFolder: '$(System.DefaultWorkingDirectory)\bin\Debug\'
       batchingBasedOnAgentsOption: 'customBatchSize'
       customBatchSizeValue: 10
