@@ -1,7 +1,5 @@
 # The objective is to perform VSTESTV2 with RerunOptions_FailedTestCaseLimit_Distributed
 
-trigger:
-- master
 jobs:
 - job: RunTest4
   displayName: 'Run Tests'
